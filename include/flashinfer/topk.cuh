@@ -1892,7 +1892,7 @@ struct FilteredTopKTraits<nv_bfloat16> {
 // FilteredTopK constants
 constexpr uint32_t FILTERED_TOPK_MAX_K = 2048;
 constexpr uint32_t FILTERED_TOPK_BLOCK_THREADS = 1024;
-constexpr uint32_t FILTERED_TOPK_SMEM_INPUT_SIZE = 16 * 1024;  // 16K indices per buffer
+constexpr uint32_t FILTERED_TOPK_SMEM_INPUT_SIZE = 70 * 128;  // 16K indices per buffer
 constexpr size_t FILTERED_TOPK_SMEM_DYNAMIC =
     sizeof(int) * 2 * FILTERED_TOPK_SMEM_INPUT_SIZE;  // 128KB
 

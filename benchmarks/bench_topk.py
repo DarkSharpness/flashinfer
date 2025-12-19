@@ -225,9 +225,11 @@ def main():
         args.compare_sglang = False
 
     # Test configurations
-    batch_sizes = [1, 16, 64, 256]
-    seq_lens = [4096, 16384, 65536, 131072, 262144, 524288]
-    k_values = [256, 512, 1024, 2048, 4096]
+    torch.random.manual_seed(42)
+    # use sm_count(148) + 1 to crack the kernel
+    batch_sizes = [1, 64, 148, 149, 256, 1024, 4096]
+    seq_lens = [4096, 16384, 65536]
+    k_values = [2048]
 
     dtype_str = args.dtype.upper()
 
